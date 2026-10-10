@@ -330,3 +330,87 @@ body.mobile-nav-active .mobile-nav-toggle {
   margin-right: 8px;
   color: #111111;
 }
+
+/* ==========================================
+   RESUME SECTION STYLING (TIMELINE)
+   ========================================== */
+.resume .resume-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #050d18;
+}
+
+.resume .resume-item {
+  padding: 0 0 25px 20px;
+  margin-top: -2px;
+  border-left: 2px solid #149ddd;
+  position: relative;
+}
+
+.resume .resume-item h4 {
+  line-height: 1.4;
+  font-size: 18px;
+  font-weight: 700;
+  color: #050d18;
+  margin-bottom: 8px;
+}
+
+.resume .resume-item h5 {
+  font-size: 14px;
+  background: #e4efe9;
+  padding: 5px 15px;
+  display: inline-block;
+  font-weight: 600;
+  color: #149ddd;
+  margin-bottom: 12px;
+  border-radius: 4px;
+}
+
+.resume .resume-item p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: #333333;
+}
+
+.resume .resume-item em {
+  font-weight: 600;
+  color: #111111;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.resume .resume-item ul {
+  padding-left: 20px;
+  margin-bottom: 12px;
+}
+
+.resume .resume-item ul li {
+  padding-bottom: 8px;
+  line-height: 1.6;
+  color: #444444;
+}
+
+.resume .resume-item ul li strong {
+  color: #111111;
+}
+
+/* Titik lingkaran di sepanjang garis timeline */
+.resume .resume-item::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  left: -9px;
+  top: 0;
+  background: #ffffff;
+  border: 2px solid #149ddd;
+}
+
+.resume .resume-skills {
+  font-size: 14px;
+  color: #555555;
+  margin-top: 8px;
+}
