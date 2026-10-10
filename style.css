@@ -1,0 +1,9 @@
+.profile img {
+  width: 120px;           /* Membatasi lebar gambar */
+  height: 120px;          /* Membatasi tinggi gambar */
+  border-radius: 50%;     /* Membuat bentuk jadi bulat/lingkaran */
+  object-fit: cover;      /* Memastikan foto tidak gepeng/terdistorsi */
+  display: block;
+  margin: 15px auto;      /* Memosisikan foto di tengah */
+  border: 8px solid #2c2f3f; /* Garis bingkai melingkar (opsional) */
+}
