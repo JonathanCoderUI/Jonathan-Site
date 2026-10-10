@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const typedElement = document.querySelector('.typed');
   
   if (typedElement) {
-    // Mengambil kata-kata dari atribut data-typed-items di HTML
     let typedItems = typedElement.getAttribute('data-typed-items').split(',');
     let itemIndex = 0;
     let charIndex = 0;
@@ -16,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const currentWord = typedItems[itemIndex].trim();
 
       if (isDeleting) {
-        // Mencegah karakter terhapus sampai minus
         typedElement.textContent = currentWord.substring(0, charIndex - 1);
         charIndex--;
       } else {
@@ -24,18 +22,15 @@ document.addEventListener('DOMContentLoaded', () => {
         charIndex++;
       }
 
-      let speed = isDeleting ? 50 : 100; // Kecepatan menghapus vs mengetik
+      let speed = isDeleting ? 50 : 100;
 
-      // Jika kata sudah selesai diketik
       if (!isDeleting && charIndex === currentWord.length) {
-        speed = 2000; // Tahan selama 2 detik
+        speed = 2000;
         isDeleting = true;
-      } 
-      // Jika kata selesai dihapus
-      else if (isDeleting && charIndex === 0) {
+      } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
-        itemIndex = (itemIndex + 1) % typedItems.length; // Lanjut ke kata berikutnya
-        speed = 500; // Jeda sebelum mulai mengetik lagi
+        itemIndex = (itemIndex + 1) % typedItems.length;
+        speed = 500;
       }
 
       setTimeout(typeEffect, speed);
@@ -51,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.nav-menu a');
 
   function activeMenuOnScroll() {
-    let scrollPosition = window.scrollY + 200; // Offset posisi scroll
+    let scrollPosition = window.scrollY + 200;
 
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
@@ -77,10 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
 
   if (mobileNavToggle) {
-    mobileNavToggle.addEventListener('click', () => {
+    mobileNavToggle.addEventListener('click', function () {
       document.body.classList.toggle('mobile-nav-active');
-      mobileNavToggle.classList.toggle('fa-bars');
-      mobileNavToggle.classList.toggle('fa-xmark'); // Ubah ikon ke 'X' saat terbuka
+      this.classList.toggle('fa-bars');
+      this.classList.toggle('fa-xmark');
     });
   }
 
@@ -89,8 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', () => {
       if (document.body.classList.contains('mobile-nav-active')) {
         document.body.classList.remove('mobile-nav-active');
-        mobileNavToggle.classList.add('fa-bars');
-        mobileNavToggle.classList.remove('fa-xmark');
+        if (mobileNavToggle) {
+          mobileNavToggle.classList.add('fa-bars');
+          mobileNavToggle.classList.remove('fa-xmark');
+        }
       }
     });
   });
