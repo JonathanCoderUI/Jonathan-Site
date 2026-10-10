@@ -232,22 +232,21 @@ section {
 /* Tombol Hamburger di Mobile */
 .mobile-nav-toggle {
   position: fixed;
-  right: 15px;
-  top: 15px;
+  right: 20px;
+  top: 20px;
   z-index: 9998;
   border: 0;
-  font-size: 24px;
-  transition: all 0.4s;
-  outline: none !important;
-  background-color: #149ddd;
-  color: #fff;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
+  font-size: 28px;
+  background: transparent; /* hilangkan background bulat */
+  color: #fff;             /* warna garis ikon */
   cursor: pointer;
+  outline: none;
+  transition: color 0.3s;
+}
+
+/* Ubah warna ikon saat di-hover */
+.mobile-nav-toggle:hover {
+  color: #149ddd;
 }
 
 /* Saat kelas mobile-nav-active aktif di body */
