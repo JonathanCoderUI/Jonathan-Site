@@ -72,10 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
   const heroSection = document.querySelector('#hero');
 
-  // Deteksi scroll untuk mengubah warna ikon toggle (Putih <-> Hitam)
   function handleToggleColorOnScroll() {
     if (mobileNavToggle && heroSection) {
-      // Jika scroll melewati batas section hero (background putih)
       if (window.scrollY >= heroSection.offsetHeight - 50) {
         mobileNavToggle.classList.add('scrolled');
       } else {
@@ -85,9 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.addEventListener('scroll', handleToggleColorOnScroll);
-  handleToggleColorOnScroll(); // Jalankan sekali saat pertama kali halaman dimuat
+  handleToggleColorOnScroll();
 
-  // Event handler untuk klik tombol toggle mobile
   if (mobileNavToggle) {
     mobileNavToggle.addEventListener('click', function () {
       document.body.classList.toggle('mobile-nav-active');
@@ -96,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* Tutup menu mobile ketika salah satu link diklik */
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
       if (document.body.classList.contains('mobile-nav-active')) {
