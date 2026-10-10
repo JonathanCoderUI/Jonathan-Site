@@ -253,3 +253,36 @@ section {
 body.mobile-nav-active #header {
   left: 0;
 }
+
+/* ==========================================
+   ANIMASI PANAH SCROLL DOWN (HERO)
+   ========================================== */
+.scroll-down {
+  position: absolute;
+  bottom: 30px;           /* Jarak 30px dari batas bawah gambar hero */
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  font-size: 26px;
+  text-decoration: none;
+  z-index: 2;
+  animation: bounce 2s infinite; /* Menjalankan animasi bouncing terus-menerus */
+  transition: color 0.3s;
+}
+
+.scroll-down:hover {
+  color: #149ddd;        /* Warna panah berubah biru saat kursor di atasnya */
+}
+
+/* Animasi Bouncing (Gerakan Naik-Turun Mulus) */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
