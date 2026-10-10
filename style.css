@@ -234,15 +234,25 @@ section {
   z-index: 9999;
   font-size: 28px;
   background: transparent;
-  color: #ffffff;
+  color: #ffffff; /* Default warna putih di section hero */
   cursor: pointer;
   display: none;
   outline: none;
-  transition: color 0.3s;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Warna berubah jadi gelap/hitam saat di-scroll melewati area hero (background putih) */
+.mobile-nav-toggle.scrolled {
+  color: #050d18;
 }
 
 .mobile-nav-toggle:hover {
   color: #149ddd;
+}
+
+/* Saat menu sidebar terbuka, paksakan tombol (ikon X) tetap berwarna putih agar kontras */
+body.mobile-nav-active .mobile-nav-toggle {
+  color: #ffffff !important;
 }
 
 @media (max-width: 991px) {

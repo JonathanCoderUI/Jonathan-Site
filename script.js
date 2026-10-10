@@ -67,10 +67,27 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', activeMenuOnScroll);
 
   /* ==========================================
-     3. TOGGLE SIDEBAR UNTUK LAYAR MOBILE
+     3. TOGGLE SIDEBAR & UBAH WARNA IKON SAAT SCROLL
      ========================================== */
   const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+  const heroSection = document.querySelector('#hero');
 
+  // Deteksi scroll untuk mengubah warna ikon toggle (Putih <-> Hitam)
+  function handleToggleColorOnScroll() {
+    if (mobileNavToggle && heroSection) {
+      // Jika scroll melewati batas section hero (background putih)
+      if (window.scrollY >= heroSection.offsetHeight - 50) {
+        mobileNavToggle.classList.add('scrolled');
+      } else {
+        mobileNavToggle.classList.remove('scrolled');
+      }
+    }
+  }
+
+  window.addEventListener('scroll', handleToggleColorOnScroll);
+  handleToggleColorOnScroll(); // Jalankan sekali saat pertama kali halaman dimuat
+
+  // Event handler untuk klik tombol toggle mobile
   if (mobileNavToggle) {
     mobileNavToggle.addEventListener('click', function () {
       document.body.classList.toggle('mobile-nav-active');
