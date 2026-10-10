@@ -7,3 +7,224 @@
   margin: 15px auto;      /* Memosisikan foto di tengah */
   border: 8px solid #2c2f3f; /* Garis bingkai melingkar (opsional) */
 }
+
+/* ==========================================
+   1. RESET & BASE STYLES
+   ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #272829;
+  background-color: #f5f8fd;
+}
+
+/* ==========================================
+   2. SIDEBAR HEADER (FIXED DI KIRI)
+   ========================================== */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  background: #040b14; /* Warna latar gelap sesuai tema iPortfolio */
+  padding: 20px 15px;
+  overflow-y: auto;
+  z-index: 999;
+  transition: all 0.4s;
+}
+
+/* --- FOTO PROFIL & SOSIAL MEDIA --- */
+.profile img {
+  display: block;
+  width: 120px;          /* Ukuran foto dipatok 120px */
+  height: 120px;
+  border-radius: 50%;    /* Menjadikan foto berbentuk lingkaran sempurna */
+  object-fit: cover;     /* Mencegah foto terdistorsi/gepeng */
+  margin: 15px auto;
+  border: 8px solid #2c2f3f; /* Bingkai melingkar */
+}
+
+.profile h1 {
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  text-align: center;
+}
+
+.profile h1 a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Ikon Media Sosial */
+.profile .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0 25px 0;
+}
+
+.profile .social-links a {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #212431;
+  color: #ffffff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.profile .social-links a:hover {
+  background: #149ddd; /* Warna aksen biru saat di-hover */
+  color: #ffffff;
+}
+
+/* --- NAVIGASI MENU --- */
+.nav-menu {
+  padding: 15px 0;
+}
+
+.nav-menu ul {
+  list-style: none;
+}
+
+.nav-menu a {
+  display: flex;
+  align-items: center;
+  color: #a8a9b4;
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  border-radius: 50px;
+  transition: 0.3s;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.nav-menu a i {
+  font-size: 20px;
+  padding-right: 15px;
+  color: #6f7180;
+}
+
+/* Efek Hover & Status Aktif */
+.nav-menu a:hover, 
+.nav-menu .active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-menu a:hover i, 
+.nav-menu .active i {
+  color: #149ddd;
+}
+
+/* ==========================================
+   3. MAIN CONTENT (GESER KE KANAN)
+   ========================================== */
+#main {
+  margin-left: 300px; /* Memberi ruang 300px agar tidak tertutup sidebar */
+  transition: all 0.5s;
+}
+
+/* --- HERO SECTION --- */
+#hero {
+  width: 100%;
+  height: 100vh;
+  background: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600") top center no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+}
+
+/* Dark Overlay di atas Background Hero */
+#hero::before {
+  content: "";
+  background: rgba(5, 13, 24, 0.4);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+}
+
+.hero-container h1 {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero-container p {
+  font-size: 26px;
+}
+
+.hero-container p span {
+  color: #ffffff;
+  border-bottom: 3px solid #149ddd;
+  padding-bottom: 4px;
+}
+
+/* --- SECTION UMUM --- */
+section {
+  padding: 60px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: #172b4d;
+}
+
+/* Garis bawah biru pada Judul Section */
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #149ddd;
+  bottom: 0;
+  left: 0;
+}
+
+/* ==========================================
+   4. RESPONSIVE FOR MOBILE
+   ========================================== */
+@media (max-width: 991px) {
+  #header {
+    left: -300px; /* Sembunyikan sidebar di layar HP */
+  }
+  
+  #main {
+    margin-left: 0; /* Konten memenuhi seluruh lebar layar HP */
+  }
+
+  #hero {
+    padding: 0 20px;
+  }
+
+  #hero h1 {
+    font-size: 40px;
+  }
+}
