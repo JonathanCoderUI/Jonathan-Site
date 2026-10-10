@@ -332,8 +332,18 @@ body.mobile-nav-active .mobile-nav-toggle {
 }
 
 /* ==========================================
-   RESUME SECTION STYLING (TIMELINE)
+   RESUME SECTION STYLING (2 KOLOM TIMELINE)
    ========================================== */
+.resume .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.resume .col-lg-6 {
+  flex: 1 1 320px; /* Fleksibel 2 kolom di layar lebar, otomatis menumpuk di layar sempit */
+}
+
 .resume .resume-title {
   font-size: 26px;
   font-weight: 700;
@@ -396,7 +406,7 @@ body.mobile-nav-active .mobile-nav-toggle {
   color: #111111;
 }
 
-/* Titik lingkaran di sepanjang garis timeline */
+/* Lingkaran timeline */
 .resume .resume-item::before {
   content: "";
   position: absolute;
